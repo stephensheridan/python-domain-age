@@ -76,9 +76,13 @@ def getDaysAlive(url):
     return today - reg_date
 
 
+# Test the function with a list of domain names ...........
 failed = []
 for domain in test_domains:
     days_alive = getDaysAlive(domain)
     if (days_alive == -1):
         failed.append(domain)
     print domain + " days alive = " + str(getDaysAlive(domain))
+
+print "No. of domain names tested: " + str(len(test_domains))
+print "No. of failures: " + len(failures)
